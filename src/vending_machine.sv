@@ -37,32 +37,32 @@ module vending_machine (
   always_comb begin
     case (current_state)
 	  S0: case ({nickle_i, dime_i, quarter_i})
-            3'b100: next_state = S5;
-            3'b010: next_state = S10;
-            3'b001: next_state = S25;
-            default: next_state = S0;
+                3'b100: next_state = S5;
+                3'b010: next_state = S10;
+                3'b001: next_state = S25;
+                default: next_state = S0;
 	      endcase
 			
 	   S5: case ({nickle_i, dime_i, quarter_i})
-             3'b100: next_state = S10;
-             3'b010: next_state = S15;
-             3'b001: next_state = S30;
-             default: next_state = S5;
+                 3'b100: next_state = S10;
+                 3'b010: next_state = S15;
+                 3'b001: next_state = S30;
+                 default: next_state = S5;
 	       endcase
 			
 	   S10: case ({nickle_i, dime_i, quarter_i})
-              3'b100: next_state = S15;
-              3'b010: next_state = S20;
-              3'b001: next_state = S35;
-              default: next_state = S10;
-            endcase
+                  3'b100: next_state = S15;
+                  3'b010: next_state = S20;
+                  3'b001: next_state = S35;
+                  default: next_state = S10;
+                endcase
 
 	   S15: case ({nickle_i, dime_i, quarter_i})
-              3'b100: next_state = S20;
-              3'b010: next_state = S25;
-              3'b001: next_state = S40;
-              default: next_state = S15;
-            endcase
+                  3'b100: next_state = S20;
+                  3'b010: next_state = S25;
+                  3'b001: next_state = S40;
+                  default: next_state = S15;
+                endcase
 
 	        default: next_state = S0;
     endcase
